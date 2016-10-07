@@ -43,7 +43,12 @@
     <outSequence>
       <send/>
     </outSequence>
-    <faultSequence/>
+    <faultSequence>
+      <log level="custom">
+        <property name="text" value="An unexpected error occured"/>
+        <property expression="get-property('ERROR_MESSAGE')" name="message"/>
+      </log>
+    </faultSequence>
   </target>
   <publishWSDL key="CheckAgeEntry"/>
 </proxy>
