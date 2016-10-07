@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messageProcessor
+  class="org.apache.synapse.message.processor.impl.forwarder.ScheduledMessageForwardingProcessor"
+  messageStore="ACTMQStore" name="MS" targetEndpoint="DeadEchoEndpoint" xmlns="http://ws.apache.org/ns/synapse">
+  <parameter name="client.retry.interval">1000</parameter>
+  <parameter name="max.delivery.attempts">1000</parameter>
+  <parameter name="max.delivery.drop">Disabled</parameter>
+  <parameter name="interval">1000</parameter>
+  <parameter name="is.active">true</parameter>
+</messageProcessor>

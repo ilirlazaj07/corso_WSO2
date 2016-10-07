@@ -34,7 +34,7 @@
           </payloadFactory>
           <send>
             <endpoint>
-              <address trace="disable" uri="http://LIT003126:8280/services/echo"/>
+              <address trace="disable" uri="http://localhost:8280/corso_wso2/services/echo"/>
             </endpoint>
           </send>
         </default>

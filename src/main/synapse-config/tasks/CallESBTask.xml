@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <task class="org.apache.synapse.startup.tasks.MessageInjector"
   group="synapse.simple.quartz" name="CallESBTask" xmlns="http://ws.apache.org/ns/synapse">
-  <trigger count="50" interval="1000000"/>
+  <trigger count="1" interval="5000000"/>
+  <property name="injectTo" value="sequence" xmlns:task="http://www.wso2.org/products/wso2commons/tasks"/>
   <property name="message" xmlns:task="http://www.wso2.org/products/wso2commons/tasks">
     <messaggio>CIAO</messaggio>
   </property>
-  <property name="injectTo" value="sequence" xmlns:task="http://www.wso2.org/products/wso2commons/tasks"/>
   <property name="sequenceName" value="TaskSequence" xmlns:task="http://www.wso2.org/products/wso2commons/tasks"/>
 </task>
