@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="FilterProxy" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <filter regex="\b[^\d\W]+\b"
+        source="//urn:sayHelloWorld/firstName" xmlns:urn="urn:examples:helloworldservice">
+        <then>
+          <log level="full"/>
+          <send/>
+        </then>
+        <else>
+          <drop/>
+        </else>
+      </filter>
+    </inSequence>
+    <outSequence>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+  <publishWSDL key="HelloWorldEntry"/>
+</proxy>

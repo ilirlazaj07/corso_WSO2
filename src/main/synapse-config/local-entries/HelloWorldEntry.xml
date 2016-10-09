@@ -8,13 +8,9 @@
     <message name="SayHelloRequest">
       <part name="firstName" type="xsd:string"/>
     </message>
-    <message name="SayHelloResponse">
-      <part name="greeting" type="xsd:string"/>
-    </message>
     <portType name="HelloWorld_PortType">
       <operation name="sayHelloWorld">
         <input message="tns:SayHelloRequest"/>
-        <output message="tns:SayHelloResponse"/>
       </operation>
     </portType>
     <binding name="HelloWorld_Binding" type="tns:HelloWorld_PortType">
@@ -26,11 +22,6 @@
             encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
             namespace="urn:examples:helloworldservice" use="encoded"/>
         </input>
-        <output>
-          <soap:body
-            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-            namespace="urn:dineshonjava:helloworldservice" use="encoded"/>
-        </output>
       </operation>
     </binding>
     <service name="HelloWorld_Service">
