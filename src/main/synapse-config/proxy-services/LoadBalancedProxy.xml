@@ -6,7 +6,7 @@
       <property name="REST_URL_POSTFIX" scope="axis2" type="STRING" value=""/>
       <property name="HTTP_METHOD" scope="axis2" type="STRING" value="GET"/>
       <send>
-        <endpoint name="PersoneEndpoint">
+        <endpoint name="1476023341193">
           <loadbalance algorithm="org.apache.synapse.endpoints.algorithms.WeightedRoundRobin">
             <endpoint>
               <address format="pox" trace="disable" uri="http://localhost:8080/restTEST/rest/persone"/>
@@ -14,6 +14,9 @@
             </endpoint>
             <endpoint>
               <address format="pox" trace="disable" uri="http://localhost:8081/restTEST/rest/persone"/>
+              <property
+                expression="fn:concat('Basic ', base64Encode('tomcat:12345'))"
+                name="Authorization" scope="transport" xmlns:ns="http://org.apache.synapse/xsd"/>
               <property name="loadbalance.weight" value="2"/>
             </endpoint>
           </loadbalance>
